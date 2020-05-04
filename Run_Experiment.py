@@ -278,16 +278,16 @@ if __name__ == '__main__':
         raise Exception('Did not initialize which experiment to run, try set up after -exp argument')
     if args.noise != None:
         noise_level = args.noise
-    else:
-        raise Exception('Did not initialize noise_level, try set up after -var argument')
+#     else:
+#         raise Exception('Did not initialize noise_level, try set up after -var argument')
     if args.states_number != None:
         num_states = args.states_number
     else:
         raise Exception('Did not initialize state numbers, try set up after -ns argument')
     if args.alpha != None:
         alpha = args.alpha
-    else:
-        raise Exception('Did not initialize alpha, try set up after -a argument')
+#     else:
+#         raise Exception('Did not initialize alpha, try set up after -a argument')
 
     if args.load_data:
         load_data = True
