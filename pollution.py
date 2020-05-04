@@ -83,7 +83,7 @@ def generate_pollution_data(data, length, num_examples = None):
     Examples = reframed.values[:num_examples]
     values = Examples.reshape(num_examples, length+1, dim)
     values = np.swapaxes(values, 1, 2)
-    return values[:, :, :-3], values[:, 0, -3:].reshape(num_examples, -1)
+    return values[:, :, :-1], values[:, 0, -1:].reshape(num_examples, -1)
 
 def other_methods_prepare_data(n = None, l = 3, add_bias = True):
 
