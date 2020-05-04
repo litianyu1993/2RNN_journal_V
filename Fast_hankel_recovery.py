@@ -347,7 +347,7 @@ def solve_cores_ALS(X, Y, rank=5, tensor_train=None):
     scalar = 1.
     for i in range(len(tensor_train)):
         #print(np.mean(tensor_train[i].tensor))
-        scalar_temp = np.max(tensor_train[i].tensor)
+        scalar_temp = np.max(np.abs(tensor_train[i].tensor))
         tensor_train[i].tensor /= scalar_temp
         scalar *= scalar_temp
     for i in range(len(tensor_train)):
