@@ -4,7 +4,7 @@
 import numpy as np
 from LinRNN import LinRNN
 import torch
-import tensorflow as tf
+#import tensorflow as tf
 '''
 Random 2RNN data generating function
 '''

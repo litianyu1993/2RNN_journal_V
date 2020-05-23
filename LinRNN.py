@@ -12,6 +12,7 @@ class LinRNN:
 
     def update_dynamics(self, prev, obs):
         #print(prev.shape, self.A.shape)
+        #print(prev.shape, self.A.shape)
         next = np.tensordot(prev, self.A, [prev.ndim - 1, 0])
         obs = obs.reshape(len(obs), -1)
         #print('error', next.shape, obs.shape)
@@ -26,11 +27,14 @@ class LinRNN:
     def predict(self, obs_sequences):
         current_state = self.alpha
         for o in obs_sequences:
-            #print('obs', obs_sequences.shape)
+            #print('obs', o.shape)
             current_state = self.update_dynamics(current_state, o)
+            #print(current_state)
         term = self.term_dynamics(current_state).ravel()
         pred = term if self.output_dim > 1 else term[0]
+        #print(pred, self.Omega)
         return np.asarray(pred)
+
 
     def build_true_Hankel_tensor(self,l):
         H = self.alpha
